@@ -6,7 +6,7 @@ import {
 	LoaderUtils,
 	Points,
 	PointsMaterial
-} from '../../../build/three.module.js';
+} from 'https://bisiyo.github.io/belleidee/build/three.module.js';
 
 var PCDLoader = function ( manager ) {
 
