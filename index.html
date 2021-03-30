@@ -48,7 +48,7 @@ let Objpoints, listenn;
 				document.body.appendChild( renderer.domElement );
 
 				const loader = new PCDLoader();
-				loader.load( '/models/dense_model.pcd', function ( points ) {
+				loader.load( '/belleidee/models/dense_model.pcd', function ( points ) {
 
 					scene.add( points );
 					const center = points.geometry.boundingSphere.center;
