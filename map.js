@@ -189,6 +189,7 @@ img.setAttribute('id', i);
 
 img.addEventListener("mouseout", function( event ) {
 	if(!insideobj) {
+
 		                            	let allaudio = document.getElementsByClassName('audi');
 
 document.getElementById('audio' + this.id).pause();
@@ -210,8 +211,12 @@ img.addEventListener("mouseover", function( event ) {
 img.addEventListener("click", function( event ) {
 	let currentTimeImp = document.getElementById('audio' + this.id).currentTime;
 	document.getElementById('audio' + this.id).src = document.getElementById('audio' + this.id).src.split('#')[0];
+	document.getElementById('audio' + this.id).controls = true;
 	document.getElementById('audio' + this.id).currentTime = currentTimeImp;
 	document.getElementById('audio' + this.id).play();
+
+
+
 
 }, false);
 

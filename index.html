@@ -316,6 +316,8 @@ for (var i = 0; i < ins.length; i++) {
 }
 
     document.getElementsByClassName("hours")[0].style.display = "block";
+
+
   }
 
     function goOutside(){
@@ -323,6 +325,7 @@ for (var i = 0; i < ins.length; i++) {
 
                for (var i = 0; i < allaudio.length; i++) {
                     allaudio[i].pause();
+                    disableControls(allaudio[i]);
                 }
 var slides = document.getElementsByClassName("open");
 for (var i = 0; i < slides.length; i++) {
@@ -341,12 +344,15 @@ for (var i = 0; i < ins.length; i++) {
 }
 
     document.getElementsByClassName("hours")[0].style.display = "none";
+    insideobj = false;               
 
-    insideobj = false;
+}
 
-                     
+function disableControls(x) { 
+    x.controls = false;
+    x.load();
+} 
 
-  }
 
 
 
