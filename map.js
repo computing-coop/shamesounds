@@ -189,7 +189,12 @@ img.setAttribute('id', i);
 
 img.addEventListener("mouseout", function( event ) {
 	if(!insideobj) {
+		                            	let allaudio = document.getElementsByClassName('audi');
+
 document.getElementById('audio' + this.id).pause();
+for (var i = 0; i < allaudio.length; i++) {
+              		allaudio[i].pause();
+              	}
 	datedisappear();
 
 
@@ -198,7 +203,6 @@ document.getElementById('audio' + this.id).pause();
 
 img.addEventListener("mouseover", function( event ) {
 	document.getElementById('audio' + this.id).play();
-	console.log(document.getElementById('audio' + this.id).currentTime);
 		dateappear(this);
 
 }, false);
@@ -283,13 +287,3 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-$(function(){
-  $(window).on('load', function(){
-    $('[data-src]').each(function(){
-      var $this = $(this),
-          src = $(this).data('src');
-      $this.attr('src', src);
-      console.log(src);
-    });
-  });
-});

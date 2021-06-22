@@ -141,12 +141,12 @@ button {
     padding-left: 54px;
     padding-top: 19px;
     cursor: pointer;
-    content: url("../img/soundoff.png");
+    content: url("https://feministcurricula.org/careclub/img/soundoff.png");
     z-index: 800;
 }
 
 .sound.on {
-    content: url("../img/soundon.png");
+    content: url("https://feministcurricula.org/careclub/img/soundon.png");
 }
 
 .dropdown-content a:hover {

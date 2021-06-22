@@ -28,7 +28,7 @@
         <source type="audio/mp3">
     </audio>
         <div class="dropdown outside" style="position: absolute;">
-        <button class="dropbtn"><img style="width: 30px;" src="/img/menu.png"></button>
+        <button class="dropbtn"><img style="width: 30px;" src="https://feministcurricula.org/careclub/img/menu.png"></button>
         <div class="dropdown-content">
             <a style="padding-top:unset; color: Blue; cursor:default">ECOUTE BELLE-IDEE </a>
             <a href="careclubabi.html">Le CARECLUB à Belle-Idée </a>
@@ -39,9 +39,12 @@
         </div>
     </div>
     <img class="sound on outside"  onclick="soundAction()">
+        <img class=" inside" id='back' src="https://feministcurricula.org/careclub/img/back.png" style="    padding: 2vh;
+    width: 50px; cursor: pointer;"  onclick='goOutside()'>
+
     <div class="restart round outside" onclick="reset()" style="color: black; font-size: 24px ;">
           <img style="width: 60px" 
-     src="/img/restart.png">
+     src="https://feministcurricula.org/careclub/img/restart.png">
     </div>
 
   
@@ -216,7 +219,16 @@ for (var i = 0; i < op.length; i++) {
 
 
       $( document ).ready(function() {
+
+   document.getElementById('back').addEventListener("click", function(){
+Objpoints.visible = false;
+
+    });
+
 document.getElementsByClassName('restart')[0].addEventListener("click", function(){
+
+ 
+
 
 let op = document.getElementsByClassName('open');
 for (var i = 0; i < op.length; i++) {
@@ -304,6 +316,34 @@ for (var i = 0; i < ins.length; i++) {
 }
 
     document.getElementsByClassName("hours")[0].style.display = "block";
+  }
+
+    function goOutside(){
+                   let allaudio = document.getElementsByClassName('audi');
+
+               for (var i = 0; i < allaudio.length; i++) {
+                    allaudio[i].pause();
+                }
+var slides = document.getElementsByClassName("open");
+for (var i = 0; i < slides.length; i++) {
+    slides[i].style.display = "block";
+}
+
+var slides = document.getElementsByClassName("outside");
+for (var i = 0; i < slides.length; i++) {
+    slides[i].style.display = "block";
+}
+
+
+var ins = document.getElementsByClassName("inside");
+for (var i = 0; i < ins.length; i++) {
+    document.getElementsByClassName("inside")[i].style.display = "none";
+}
+
+    document.getElementsByClassName("hours")[0].style.display = "none";
+
+                     
+
   }
 
 
