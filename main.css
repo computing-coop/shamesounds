@@ -1,84 +1,386 @@
+@font-face {
+    font-family: "Block";
+    src: url("Block Berthold Condensed.otf") format("otf");
+}
+
+
 body {
-	margin: 0;
-	background-color: #000;
-	color: #fff;
-	font-family: Monospace;
-	font-size: 13px;
-	line-height: 24px;
-	overscroll-behavior: none;
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: "Block";
+    font-size: 13px;
+    line-height: 24px;
+    overscroll-behavior: none;
+    overflow-x: hidden;
+     background:
+        radial-gradient(at center, #bc2e41, #2c4e90);
 }
 
 a {
-	color: #ff0;
-	text-decoration: none;
+    color: white;
 }
 
 a:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 button {
-	cursor: pointer;
-	text-transform: uppercase;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.hours {
+    font-size: 20px;
+    position: absolute;
+    right: 2.5vh;
+    top: 2.5vh;
+    color: white;
+    font-family: "Block";
+    z-index: 20;
+    display: none;
+    border: 1px white solid;
+    padding: 8px;
+}
+
+
+
+.restart {
+    position: absolute;
+    right: 2.5vh;
+    bottom: 2.5vh;
+    cursor: pointer;
+
+    z-index: 20;
+}
+
+.round {
+    transform: rotate(0deg);
+    transition: transform 0.5s;
+    filter: invert(100%);
+}
+
+.round:hover {
+    transform: rotate(360deg);
+}
+
+.inside {
+    display: none;
+}
+
+.scaledo {
+    transform: scale(1.0);
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+
+.scaledo:hover {
+    transform: scale(0.9);
+
+}
+
+
+.scaleup {
+    transform: scale(1.0) translate(-50%, -50%) rotate(0deg);
+    transition: transform 2s;
+    cursor: pointer;
+}
+
+.scaleup.inv:hover {
+    transform: scale(1.5) translate(-50%, -50%) rotate(-45deg);
+}
+
+.scaleup:hover {
+    transform: scale(1.5) translate(-50%, -50%) rotate(45deg);
+    transition: transform 30s;
+    z-index: 5;
+
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 16px;
+    padding-bottom: 0px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn img {}
+
+.dropdown {
+    font-family: "Block";
+    position: relative;
+    display: inline-block;
+    z-index: 801;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 500px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 5px 16px;
+    font-size: 25px;
+    text-decoration: none;
+    display: block;
+    font-family: "Block";
+    opacity: 1;
+
+}
+
+.sound {
+    width: 30px;
+    position: absolute;
+    padding-left: 54px;
+    padding-top: 19px;
+    cursor: pointer;
+    content: url("../img/soundoff.png");
+    z-index: 800;
+}
+
+.sound.on {
+    content: url("../img/soundon.png");
+}
+
+.dropdown-content a:hover {
+    opacity: 0.5;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: white;
+}
+
+.radial-gradient {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+
+    /*Fallback if gradeints don't work */
+    background: #9b59b6;
+    /*Linear gradient... */
+    background:
+        radial-gradient(at center, #bc2e41, #2c4e90);
+    z-index: -1;
+}
+
+.fond {
+	background: #9b59b6;
+    /*Linear gradient... */
+min-height: 100vh;
+        width: 100vw;
+
+}
+
+
+
+.textbig, .titlebig {
+	font-size: 25px;
+    max-width: 800px;
+    padding-left: calc(350px + 8vw);
+    padding-bottom: 5vw;
+    line-height: 28px;
+    padding-right: 5vw;
+}
+
+.titlebig {
+	    padding-top: 5vw;
+	font-size: 50px;
+	padding-bottom: unset;
+	line-height: 50px;
+}
+
+.linear-gradient {
+    background: linear-gradient(#bc2e41, #2c4e90);
 }
 
 #info {
-	position: absolute;
-	top: 0px;
-	width: 100%;
-	padding: 10px;
-	box-sizing: border-box;
-	text-align: center;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	pointer-events: none;
-	z-index: 1; /* TODO Solve this in HTML */
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+    /* TODO Solve this in HTML */
 }
 
-a, button, input, select {
-	pointer-events: auto;
+a,
+button,
+input,
+select {
+    pointer-events: auto;
 }
 
 .dg.ac {
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	z-index: 2 !important; /* TODO Solve this in HTML */
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 2 !important;
+    /* TODO Solve this in HTML */
 }
 
 #overlay {
-	position: absolute;
-	font-size: 16px;
-	z-index: 2;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	background: rgba(0,0,0,0.7);
+    position: absolute;
+    font-size: 16px;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.7);
 }
 
-	#overlay button {
-		background: transparent;
-		border: 0;
-		border: 1px solid rgb(255, 255, 255);
-		border-radius: 4px;
-		color: #ffffff;
-		padding: 12px 18px;
-		text-transform: uppercase;
-		cursor: pointer;
-	}
+#overlay button {
+    background: transparent;
+    border: 0;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 12px 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
 
 #notSupported {
-	width: 50%;
-	margin: auto;
-	background-color: #f00;
-	margin-top: 20px;
-	padding: 10px;
+    width: 50%;
+    margin: auto;
+    background-color: #f00;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: block;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 900;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fallback color */
+    /*background-color: rgba(0,0,0,0.8);  Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    font-size: 25px;
+    margin-top: 100px;
+    line-height: 28px;
+    text-align: center;
+}
+
+.modal-content div {
+    width: 500px;
+    margin: auto;
+}
+
+.enterWeb {
+    color: white;
+    background: transparent;
+    font-size: 50px;
+}
+
+.enterWeb:hover {
+    color: black;
+    background-color: white;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.insidemenu {
+	padding-left: 6vw;
+	padding-top: 109px;
+	display: block;
+}
+
+.mobile {
+	display: none;
+}
+
+@media screen and (max-width: 980px) {
+
+    .modal-content {
+        margin-top: 4vh;
+    }
+
+    .modal-content div {
+        width: 100%;
+    }
+
+.insidemenu {
+	padding-left: unset;
+	padding-top: unset;
+	display: unset;
+}
+
+.mobile {
+	display: block;
+}
+
+.textbig, .titlebig {
+padding-left: 2vh;
+padding-right: 2vh;
+}
+
+.fond {
+    background:
+        radial-gradient(at center, #bc2e41, #2c4e90);
+}
+
+.titlebig {
+	padding-top: 210px;
+	line-height: 40px;
+	font-size: 45px;
+}
+
 }

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Belle idée</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+<link type="text/css" rel="stylesheet" href="main.css">
+
+<body style="overflow:hidden;">
+    <div class="hours">21.05.21</div>
+    <audio id="interview" preload="metadata">
+        <source src="interview.mp3" type="audio/mpeg">
+    </audio>
+        <div class="dropdown" style="position: absolute;">
+        <button class="dropbtn"><img style="width: 30px" src="/img/menu.png"></button>
+        <div class="dropdown-content">
+            <a href="#">Ecoute</a>
+            <a href="#">Explore</a>
+            <a href="#">Rencontre</a>
+            <a href="#">Archive</a>
+            <a href="#">Contacte</a>
+            <a href="#">Liens</a>
+        </div>
+    </div>
+    <div class="restart round outside" style="color: black; font-size: 24px ;">
+    	  	<img style="width: 60px" 
+     src="/img/restart.png">
+    </div>
+    <div class="restart inside" style="color: black; font-size: 24px ;">
+ Ecouter l'audio
+    </div>
+       <div id="audioControls" class="inside" style="position: absolute; bottom: 2vh; left: 2vh; z-index: 20">
+       	  	<img  style="width: 60px; cursor: pointer;" 
+     src="/img/startagain.png" class="round">
+       	<img style="width: 60px;"  class="scaledo" 
+     src="/img/pause.png">
+    </div>
+
+           	<img class="scaleup outside" id="motobizarre" style="width: 50vw; cursor:pointer; z-index: 10; position: absolute; right: -5%; bottom: -5%" src="/img/obj/motobizarre.png" onmouseenter="dateappear('24.02.2021')" onmouseleave="datedisappear()" onmousedown="objclick()">
+           	<img id="bac" class="scaleup outside" style="width: 50vw; cursor:pointer; z-index: 10; position: absolute; right: -5%; top: -5%" src="/img/obj/bac.png" onmouseenter="dateappear('18.12.2020')" onmouseleave="datedisappear()" onmousedown="objclick()">
+           	<img id="banc" onmouseenter="dateappear('14.11.2020')" onmouseleave="datedisappear()" onmousedown="objclick()" class="scaleup outside" style="width: 60vw; cursor:pointer; z-index: 10; position: absolute; left: -5%; top: -15%" src="/img/obj/banc.png">
+           	<img id="appeleur" class="scaleup outside" onmouseenter="dateappear('09.09.2020')" onmouseleave="datedisappear()" onmousedown="objclick()" style="width: 50vw; cursor:pointer; z-index: 10; position: absolute; left: -5%; bottom: -5%" src="/img/obj/appeleur.png">
+           	<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10"><img class="scaleup outside" style="width: 50vw; cursor:pointer; z-index: 10;" src="/img/obj/barrage.png" id="barrage" onmouseenter="dateappear('12.03.2021')" onmouseleave="datedisappear()" onmousedown="objclick()"></div>
+
+
+
+    		<div id="myModal" class="modal" style="z-index: 50">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+
+<button class="enterWeb">Enter</button>
+  </div>
+
+</div>
+    <script type="module">
+        import * as THREE from '/build/three.module.js';
+
+
+			import { TrackballControls } from '/jsm/TrackballControls.js';
+			import { PCDLoader } from '/jsm/PCDLoader.js';
+
+			let container;
+			let camera, controls, scene, renderer;
+let Objpoints;
+let listenn = false;
+let loadIndexObj = 0;
+let listObjects = ['banc' , 'motobizarre', 'barrage', 'appeleur', 'bac']
+
+
+			const mouse = new THREE.Vector2();
+
+
+			init();
+			animate();
+			function init() {
+
+				scene = new THREE.Scene();
+scene.background = null;
+				camera = new THREE.PerspectiveCamera( 15, window.innerWidth / window.innerHeight, 0.01, 40 );
+				camera.position.x = 0.4;
+				camera.position.z = - 2;
+				camera.up.set( 0, 0, 1 );
+				camera.far = 200;
+				camera.near = 0.001;
+
+				scene.add( camera );
+
+				renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.domElement.setAttribute('class', "radial-gradient");
+				document.body.appendChild( renderer.domElement );
+
+				loadNewObject();
+
+
+				container = document.createElement( 'div' );
+				document.body.appendChild( container );
+				container.appendChild( renderer.domElement );
+
+				controls = new TrackballControls( camera, renderer.domElement );
+
+				controls.rotateSpeed = 2.0;
+				controls.zoomSpeed = 0.3;
+				controls.panSpeed = 0.2;
+
+				controls.staticMoving = true;
+
+				controls.minDistance = 0.3;
+
+
+				window.addEventListener( 'resize', onWindowResize );
+
+								document.addEventListener( 'click', onDocumentMouseMove );
+
+
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				controls.handleResize();
+
+			}
+
+			function loadNewObject() {
+
+				document.getElementById(listObjects[loadIndexObj]).addEventListener("click", function ( event ) {
+					scene.getObjectByName(listObjects[loadIndexObj]).visible = true; 
+					console.log('hello')
+} ); 				
+				const loader = new PCDLoader();
+				let urlLoader = "/models/" + listObjects[loadIndexObj] + ".pcd";
+				loader.load( urlLoader, function ( points ) {
+
+					scene.add( points );
+					const center = points.geometry.boundingSphere.center;
+					controls.target.set( center.x, center.y, center.z );
+					controls.update();
+points.material.size = 0.07;
+
+						points.material.needsUpdate = true;
+						points.position.z = 20;
+						points.name = listObjects[loadIndexObj];
+						points.visible = false;
+
+												points.position.x = -2;
+
+												points.position.y = -2;
+
+											Objpoints = points;
+											loadIndexObj++;
+											if (loadIndexObj < listObjects.length) {
+loadNewObject();
+											}
+
+
+				} );
+			}
+
+
+			function onDocumentMouseMove( ) {
+/*
+
+				if (listenn) {
+					listenn = false;
+					 document.getElementById("interview").pause();
+
+				} else {
+					listenn = true;
+					document.getElementById("interview").play();
+
+				}
+
+				*/
+
+}
+
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+				controls.update();
+				renderer.render( scene, camera );
+				renderer.setClearAlpha(0);
+
+
+
+
+				if (listenn) Objpoints.rotation.y += 0.001;
+
+			}
+
+			function objOpen(blo) {
+				scene.getObjectByName(blo).visible = true;
+
+			}
+
+		</script>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+	$(document).mousemove(function(event) {
+  windowWidth = $(window).width();
+  windowHeight = $(window).height();
+  
+  mouseXpercentage = Math.round(event.pageX / windowWidth * 100);
+  mouseYpercentage = Math.round(event.pageY / windowHeight * 100);
+  
+  $('.radial-gradient').css('background', 'radial-gradient(at ' + mouseXpercentage + '% ' + mouseYpercentage + '%, #bc2e41, #2c4e90)');
+
+});
+	$('.enterWeb').click(function(event) {
+  document.getElementById("myModal").style.display = "none";
+});
+
+	function dateappear(blo) {
+		document.getElementsByClassName("hours")[0].innerHTML = blo;
+		document.getElementsByClassName("hours")[0].style.display = "block";
+	}
+
+		function datedisappear() {
+		document.getElementsByClassName("hours")[0].style.display = "none";
+	}
+
+	function objclick() {
+var slides = document.getElementsByClassName("outside");
+for (var i = 0; i < slides.length; i++) {
+		document.getElementsByClassName("outside")[i].style.display = "none";
+}
+var ins = document.getElementsByClassName("inside");
+for (var i = 0; i < ins.length; i++) {
+		document.getElementsByClassName("inside")[i].style.display = "block";
+}
+
+		document.getElementsByClassName("hours")[0].style.display = "block";
+	}
+
+
+
+</script>
+
+</html>
