@@ -147,7 +147,7 @@ scene.background = null;
 
       function loadNewObject() {        
         const loader = new PCDLoader();
-        let urlLoader = "/models/" + listObjects[loadIndexObj] + ".pcd";
+        let urlLoader = "https://bisiyo.github.io/belleidee/models/" + listObjects[loadIndexObj] + ".pcd";
         loader.load( urlLoader, function ( points ) {
 
           scene.add( points );
