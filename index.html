@@ -5,6 +5,13 @@
     <title>Belle idée</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    
+<ifmodule mod_headers.c="">
+   SetEnvIf Origin "^(.*\.domain\.com)$" ORIGIN_SUB_DOMAIN=$1
+   Header set Access-Control-Allow-Origin "%{https://ecoute-belle-idee.com/}e" env=https://ecoute-belle-idee.com/
+   Header set Access-Control-Allow-Methods: "*"
+   Header set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+</ifmodule>
 </head>
 <link type="text/css" rel="stylesheet" href="main.css">
 <link rel="stylesheet" href="blurry-load.min.css">
