@@ -3,6 +3,10 @@
     src: url("Block Berthold Condensed.otf") format("otf");
 }
 
+canvas {
+    width: 100vw;
+    height: 10vh;
+}
 
 body {
     margin: 0;
@@ -18,16 +22,22 @@ body {
 }
 
 a {
-    color: white;
+    color: palegreen;
+    text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
+    text-decoration-color: white;
 }
 
 button {
     cursor: pointer;
     text-transform: uppercase;
+}
+
+.dust {
+    position: absolute;
 }
 
 .hours {
@@ -41,14 +51,33 @@ button {
     display: none;
     border: 1px white solid;
     padding: 8px;
+    border-radius: 20px;
 }
 
+.catalog {
+    display: flex;
+        border: 1px solid transparent;
+        padding: 7px;
+
+}
+
+.catalog div {
+    flex: 1;
+}
+
+.catalog:hover {
+    border-radius: 50px;
+    border: 1px solid white;
+    color: palegreen;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+}
 
 
 .restart {
     position: absolute;
     right: 2.5vh;
-    bottom: 2.5vh;
+    bottom: 0vh;
     cursor: pointer;
 
     z-index: 20;
@@ -113,7 +142,7 @@ button {
     font-family: "Block";
     position: relative;
     display: inline-block;
-    z-index: 801;
+    z-index: 1201;
 
 }
 
@@ -126,16 +155,20 @@ button {
 
 .dropdown-content a {
     color: white;
-    padding: 5px 16px;
+    padding: 7px 16px;
     font-size: 25px;
     text-decoration: none;
     display: block;
     font-family: "Block";
     opacity: 1;
+        width: fit-content;
+        border-radius: 20px;
+    border: transparent 1px solid;
+
 }
 
 .audi {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100vw;
     left: 0;
@@ -144,19 +177,69 @@ button {
 .sound {
     width: 30px;
     position: absolute;
-    padding-left: 54px;
-    padding-top: 19px;
+    top: 15px;
+    left: 60px;
     cursor: pointer;
-    content: url("https://feministcurricula.org/careclub/img/soundoff.png");
     z-index: 800;
+        fill: white;
 }
 
-.sound.on {
-    content: url("https://feministcurricula.org/careclub/img/soundon.png");
+svg {
+    fill: white;
+}
+
+svg:hover {
+    fill: palegreen;
+}
+
+.sound:hover {
+    fill: palegreen;
+}
+
+.sound > .eteint {
+    display: block;
+}
+
+
+.sound.on > .eteint {
+    display: none;
+}
+
+
+.sound > .allume {
+    display: none;
+}
+
+
+.sound.on > .allume {
+    display: block;
+}
+
+.PlayPause > .stoping {
+    display: block;
+}
+
+
+.PlayPause.on > .stoping {
+    display: none;
+}
+
+
+.PlayPause > .playing {
+    display: none;
+}
+
+
+.PlayPause.on > .playing {
+    display: block;
 }
 
 .dropdown-content a:hover {
-    opacity: 0.5;
+    border: white 1px solid;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: palegreen;
+
+
 }
 
 .dropdown:hover .dropdown-content {
@@ -183,7 +266,7 @@ button {
 }
 
 .fond {
-	background: #9b59b6;
+    background: #9b59b6;
     /*Linear gradient... */
 min-height: 100vh;
         width: 100vw;
@@ -193,7 +276,7 @@ min-height: 100vh;
 
 
 .textbig, .titlebig {
-	font-size: 25px;
+    font-size: 25px;
     max-width: 800px;
     padding-left: calc(350px + 8vw);
     padding-bottom: 5vw;
@@ -202,10 +285,10 @@ min-height: 100vh;
 }
 
 .titlebig {
-	    padding-top: 5vw;
-	font-size: 50px;
-	padding-bottom: unset;
-	line-height: 50px;
+        padding-top: 5vw;
+    font-size: 50px;
+    padding-bottom: unset;
+    line-height: 50px;
 }
 
 .linear-gradient {
@@ -304,28 +387,37 @@ select {
 .modal-content {
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid white;
     width: 80%;
-    font-size: 25px;
-    margin-top: 100px;
-    line-height: 28px;
+    min-height: 40vh;
+    font-size: 30px;
+    line-height: 30px;
     text-align: center;
+    border-radius: 50px;
+    transform: translateY(17%);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .modal-content div {
-    width: 500px;
+    width: 600px;
     margin: auto;
+    margin-top: 20px;
 }
 
 .enterWeb {
     color: white;
     background: transparent;
     font-size: 50px;
+    padding: 12px;
+    margin: 20px;
+    border: 1px solid transparent;
 }
 
+
 .enterWeb:hover {
-    color: black;
-    background-color: white;
+    border-radius: 50px;
+    border: 1px solid white;
+color: palegreen;
 }
 
 /* The Close Button */
@@ -344,33 +436,101 @@ select {
 }
 
 .insidemenu {
-	padding-left: 6vw;
-	padding-top: 109px;
-	display: block;
+    padding-left: 6vw;
+    padding-top: 102px;
+    display: block;
+}
+
+.insidemenu.home {
+    display: none;
 }
 
 .mobile {
-	display: none;
+    display: none;
+}
+
+.caty::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 50px;
+}
+
+/* Track */
+.caty::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.2); 
+}
+ 
+/* Handle */
+.caty::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2); 
+}
+
+/* Handle on hover */
+.caty::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5); 
+}
+
+.caty {
+    height:75vh; 
+    overflow: auto; 
+    padding-bottom: unset;
+}
+
+.ecoute {
+    color: palegreen;
+}
+
+.ecoute:hover {
+    border: 1px transparent solid;
+    background: none;
+    cursor: default;
 }
 
 @media screen and (max-width: 980px) {
 
     .modal-content {
         margin-top: 4vh;
+        transform: none;
+        height: 87vh;
+    overflow: auto
     }
 
     .modal-content div {
         width: 100%;
+font-size: 26px;
+    line-height: 27px;
+
     }
 
+.caty {
+    height:42vh; 
+    margin-bottom: 9vh;
+}
+
+.catalog {
+    flex-direction: column;
+}
+
+    .enterWeb {
+    /* margin: unset; */
+    position: absolute;
+    /* padding: 20px; */
+    bottom: 40px;
+    border-color: white;
+    border-radius: 50px;
+    left: 50%;
+    margin-left: unset;
+    transform: translateX(-50%);
+    color: palegreen;
+        }
+
 .insidemenu {
-	padding-left: unset;
-	padding-top: unset;
-	display: unset;
+    padding-left: unset;
+    padding-top: unset;
+    display: unset;
 }
 
 .mobile {
-	display: block;
+    display: block;
 }
 
 .textbig, .titlebig {
@@ -384,9 +544,9 @@ padding-right: 2vh;
 }
 
 .titlebig {
-	padding-top: 210px;
-	line-height: 40px;
-	font-size: 45px;
+    padding-top: 320px;
+    line-height: 40px;
+    font-size: 45px;
 }
 
 }

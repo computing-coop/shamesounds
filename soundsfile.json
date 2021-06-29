@@ -5,7 +5,8 @@
     "s1": "01:07-02:00",
     "s2": "02:10-02:45",
     "s3": "03:10-03:50",
-    "id": "19PdBKd__1ejRFCmT9g4xiivp6M6QXFgl"
+    "id": "19PdBKd__1ejRFCmT9g4xiivp6M6QXFgl",
+    "duration": "6 minutes 10"
   },
   {
     "date": "05.03.2020",
@@ -13,7 +14,8 @@
     "s1": "00:40-1:39",
     "s2": "04:18-5:02",
     "s3": "",
-    "id": "1AIZ_CQ3ZM0o3q262SvRNhURbT4ZIqe6N"
+    "id": "1AIZ_CQ3ZM0o3q262SvRNhURbT4ZIqe6N",
+    "duration": "5 minutes 01"
   },
   {
     "date": "05.03.2020",
@@ -21,7 +23,8 @@
     "s1": "00:10-01:25",
     "s2": "01:45-02:45",
     "s3": "",
-    "id": "166xE5YtYnN3Jygxz8DGwmKY98GNqlW2C"
+    "id": "166xE5YtYnN3Jygxz8DGwmKY98GNqlW2C",
+    "duration": "3 minutes 31"
   },
   {
     "date": "05.03.2020",
@@ -29,7 +32,8 @@
     "s1": "00:06-01:01",
     "s2": "01:04-01:40",
     "s3": "01:43-01:52",
-    "id": "1D0_Yy37Z9BgloS5JtPNH3lU-tMqXRng8"
+    "id": "1D0_Yy37Z9BgloS5JtPNH3lU-tMqXRng8",
+    "duration": "2 minutes 13"
   },
   {
     "date": "05.03.2020",
@@ -37,7 +41,8 @@
     "s1": "00:44-01:58",
     "s2": "02:25-3:12",
     "s3": "",
-    "id": "1f4mP9hr5X2fqy_DoFFe0VNS33-ljzXiZ"
+    "id": "1f4mP9hr5X2fqy_DoFFe0VNS33-ljzXiZ",
+    "duration": "3 minutes 54"
   },
   {
     "date": "05.03.2020",
@@ -45,7 +50,8 @@
     "s1": "00:30-02:06",
     "s2": "2:56-3:43",
     "s3": "",
-    "id": "13Ac9yRWKnqYfWdt-kFX4-Fvsrp0C26rZ"
+    "id": "13Ac9yRWKnqYfWdt-kFX4-Fvsrp0C26rZ",
+    "duration": "5 minutes 03"
   },
   {
     "date": "07.11.2019",
@@ -53,15 +59,8 @@
     "s1": "01:26-02:24",
     "s2": "13:28-14:15",
     "s3": "",
-    "id": "1SVPV5lBjm15fYz905lr2UHJEchNgzvcp"
-  },
-  {
-    "date": "07.11.2019",
-    "hours": "11h40",
-    "s1": "03:10-03:55",
-    "s2": "",
-    "s3": "",
-    "id": "16KJVl5Iu4ZkuQ8RJ-j45fP6ZBQqJGKtK"
+    "id": "1SVPV5lBjm15fYz905lr2UHJEchNgzvcp",
+    "duration": "29 minutes 48"
   },
   {
     "date": "12.12.2019",
@@ -69,7 +68,8 @@
     "s1": "27:28-29:55",
     "s2": "31:07-32:56",
     "s3": "10:41-12:49",
-    "id": "1wJUZFR3nlrtj1Yg62OCIywD1u7DWBZ58"
+    "id": "1wJUZFR3nlrtj1Yg62OCIywD1u7DWBZ58",
+    "duration": "47 minutes 07"
   },
   {
     "date": "11.05.2020",
@@ -77,7 +77,8 @@
     "s1": "03:46-04:22",
     "s2": "8:34-11:12",
     "s3": "22:55-24:30",
-    "id": "1zAjHRZhpPspw_EjZZkAqNApydQ2OZFgH"
+    "id": "1zAjHRZhpPspw_EjZZkAqNApydQ2OZFgH",
+    "duration": "35 minutes 22"
   },
   {
     "date": "27.08.2020",
@@ -85,7 +86,8 @@
     "s1": "01:36-03:19",
     "s2": "00:58:30-01:02:30",
     "s3": "01:04:30-01:05:25",
-    "id": "1KNa0X0_D64BpH3V9ESfLeExZTYlri19W"
+    "id": "1KNa0X0_D64BpH3V9ESfLeExZTYlri19W",
+    "duration": "1 heure 28 minutes 54"
   },
   {
     "date": "28.08.2020",
@@ -93,7 +95,8 @@
     "s1": "07:13-07:36",
     "s2": "13:29-13:55",
     "s3": "15:07-15:14",
-    "id": "1_MY-W1LtxsALeB7ZmQEvGeFxSprWwL_T"
+    "id": "1_MY-W1LtxsALeB7ZmQEvGeFxSprWwL_T",
+    "duration": "16 minutes 41"
   },
   {
     "date": "01.10.2020",
@@ -101,7 +104,8 @@
     "s1": "02:25-04:05",
     "s2": "18:37-19:24",
     "s3": "22:54-24:04",
-    "id": "15a0V0uiNKZyvE8D2JBEhNozqj3-OUb2Y"
+    "id": "15a0V0uiNKZyvE8D2JBEhNozqj3-OUb2Y",
+    "duration": "38 minutes 19"
   },
   {
     "date": "08.10.2020",
@@ -109,7 +113,8 @@
     "s1": "18:10-22:20",
     "s2": "26:10-26:55",
     "s3": "32:10-40:10",
-    "id": "1FrTK-h3UrukHlb1lzoNxPSEnQ9u8-RGw"
+    "id": "1FrTK-h3UrukHlb1lzoNxPSEnQ9u8-RGw",
+    "duration": "1 heure 23 minutes 58"
   },
   {
     "date": "15.10.2020",
@@ -117,7 +122,8 @@
     "s1": "1:10-2:54",
     "s2": "9:20-12:46",
     "s3": "",
-    "id": "1M8MEH0tz5EO7YnKzT2yQYFChdB-1-5_x"
+    "id": "1M8MEH0tz5EO7YnKzT2yQYFChdB-1-5_x",
+    "duration": "26 minutes"
   },
   {
     "date": "15.10.2020",
@@ -125,7 +131,8 @@
     "s1": "5:40-8:30",
     "s2": "13:15-15:15:59",
     "s3": "18:00-19:50",
-    "id": "1azeSusoX3nch2hDQVLKvrCwjDaEAQydf"
+    "id": "1azeSusoX3nch2hDQVLKvrCwjDaEAQydf",
+    "duration": "45 minutes 20"
   },
   {
     "date": "22.10.2020",
@@ -133,7 +140,8 @@
     "s1": "5:52-7:53",
     "s2": "10:41-12:30",
     "s3": "12:35-13:52",
-    "id": "1Dl25-EorYl_KW6-sNx5fzQ_owLQ5RXtu"
+    "id": "1Dl25-EorYl_KW6-sNx5fzQ_owLQ5RXtu",
+    "duration": "19 minutes 49"
   },
   {
     "date": "19.11.2020",
@@ -141,6 +149,7 @@
     "s1": "18:13-20:40",
     "s2": "22:06-24:07",
     "s3": "13:34-17:34",
-    "id": "15MYjqxoz4ZW4xJ56ufvYk2wSs8-EqyV7"
+    "id": "15MYjqxoz4ZW4xJ56ufvYk2wSs8-EqyV7",
+    "duration": "41 minutes"
   }
 ]

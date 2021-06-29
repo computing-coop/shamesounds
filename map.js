@@ -104,6 +104,7 @@ function setbasgauche() {
 
             function soundAction() {
               document.getElementsByClassName('sound')[0].classList.toggle('on');
+
                             	let allaudio = document.getElementsByClassName('audi');
 
               if (document.getElementsByClassName('sound')[0].classList.contains('on')) {
@@ -210,11 +211,11 @@ img.addEventListener("mouseover", function( event ) {
 
 img.addEventListener("click", function( event ) {
 	let currentTimeImp = document.getElementById('audio' + this.id).currentTime;
-	document.getElementById('audio' + this.id).src = document.getElementById('audio' + this.id).src.split('#')[0];
-	document.getElementById('audio' + this.id).controls = true;
-	document.getElementById('audio' + this.id).currentTime = currentTimeImp;
-	document.getElementById('audio' + this.id).play();
-
+	document.getElementById('audio' + this.id).pause();
+	document.getElementById('bigAudio').src = document.getElementById('audio' + this.id).src.split('#')[0];
+	//document.getElementById('bigAudio').controls = true;
+	document.getElementById('bigAudio').currentTime = currentTimeImp;
+	document.getElementById('bigAudio').play();
 
 
 

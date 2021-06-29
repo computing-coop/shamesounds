@@ -1,0 +1,45 @@
+.plyr--audio .plyr__controls {	    color: white;
+    background: transparent;
+    position: absolute;
+    width: 100%;
+    bottom: -100vh;
+    }
+
+    .plyr__progress__buffer {
+    	color: var(--plyr-audio-progress-buffered-background,rgba(193,200,209,.2));
+    }
+
+    .plyr--audio .plyr__control.plyr__tab-focus, .plyr--audio .plyr__control:hover, .plyr--audio .plyr__control[aria-expanded=true] {
+    background: #00b3ff;
+    background: transparent;
+    color: #fff;
+    color:palegreen;
+}
+
+.plyr--full-ui input[type=range] {
+	color: palegreen;
+}
+
+.plyr__menu__container {
+	display: none;
+}
+
+.plyr__time {
+    font-family: "Block";
+        font-size: var(--plyr-font-size-time,var(--plyr-font-size-small,15px));
+
+}
+
+.plyr__menu {
+	display: none;
+}
+
+
+@media screen and (max-width: 980px) {
+
+.plyr--audio .plyr__controls {
+    position: fixed;
+    bottom: 0;
+    }
+
+}

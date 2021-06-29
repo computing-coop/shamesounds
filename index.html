@@ -5,53 +5,105 @@
     <title>Belle idée</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-
-<ifmodule mod_headers.c="">
-   SetEnvIf Origin "^(.*\.domain\.com)$" ORIGIN_SUB_DOMAIN=$1
-   Header set Access-Control-Allow-Origin "%{https://ecoute-belle-idee.com/}e" env=https://ecoute-belle-idee.com/
-   Header set Access-Control-Allow-Methods: "*"
-   Header set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-</ifmodule>
 </head>
 <link type="text/css" rel="stylesheet" href="main.css">
 <link rel="stylesheet" href="blurry-load.min.css">
 <script src="blurry-load.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.6.8/plyr.css" integrity="sha512-cdtHYQTBNMRJwVUi/jCYhncP1JQRblIP9JTWJMeNN8ObYt5TfPrUjs53lH6hbirtzBhC02UrRpNFyFL2hrR0xg==" crossorigin="anonymous" referrerpolicy="no-referrer" /><script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.6.8/plyr.js" integrity="sha512-RI45KQwYpBlOR00/igCIkmVaN7Ffn2SCv+Nbe0o+eIDW6YEdnlXU8f/wqvp4qFWLgKh3YK+sUAD1+CssTHl5Vw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link type="text/css" rel="stylesheet" href="player.css">
 
 <body style="overflow:hidden;">
     <div class="hours">21.05.21</div>
-    <audio class="audi" id="audio0" preload="metadata" onended="">
+    <audio class="audi" id="audio0" preload="metadata" onended="" download='no'>
         <source type="audio/mp3">
     </audio>
-        <audio  class="audi" id="audio1" preload="metadata" onended="">
+        <audio  class="audi" id="audio1" preload="metadata" onended="" download='no'>
         <source type="audio/mp3">
     </audio>
-        <audio  class="audi" id="audio2" preload="metadata" onended="">
+        <audio  class="audi" id="audio2" preload="metadata" onended="" download='no'>
         <source type="audio/mp3">
     </audio>
-        <audio  class="audi" id="audio3" preload="metadata" onended="">
+        <audio  class="audi" id="audio3" preload="metadata" onended="" download='no'>
         <source type="audio/mp3">
     </audio>
-        <audio  class="audi" id="audio4" preload="metadata" onended="">
+        <audio  class="audi" id="audio4" preload="metadata" onended="" download='no'>
         <source type="audio/mp3">
     </audio>
-        <div class="dropdown outside" style="position: absolute;">
-        <button class="dropbtn"><img style="width: 30px;" src="https://feministcurricula.org/careclub/img/menu.png"></button>
-        <div class="dropdown-content">
-            <a style="padding-top:unset; color: Blue; cursor:default">ECOUTE BELLE-IDEE </a>
+    <div class="inside">
+    <audio class="audi " class="" id="bigAudio"  controls="" preload="metadata" download='no' onended="goOutside()" >
+                <source type="audio/mp3">
+    </audio></div>
+
+            <button class="dropbtn outside" onmouseenter="openMenu()" onclick="openMenu()" style="z-index: 850; position:absolute;"><svg style='width: 30px;' version="1.1"
+     id="Layer_1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 125"
+     style="enable-background:new 0 0 100 125;" xml:space="preserve">
+<g transform="translate(0,-952.36218)">
+    <path class="st0" d="M16,973.4c-3.3,0-6,2.7-6,6c0,3.3,2.7,6,6,6h68c3.3,0,6-2.7,6-6c0-3.3-2.7-6-6-6H16z M16,996.4
+        c-3.3,0-6,2.7-6,6c0,3.3,2.7,6,6,6h68c3.3,0,6-2.7,6-6c0-3.3-2.7-6-6-6H16z M16,1019.4c-3.3,0-6,2.7-6,6c0,3.3,2.7,6,6,6h68
+        c3.3,0,6-2.7,6-6c0-3.3-2.7-6-6-6H16z"/>
+</g></button>
+
+        <div class="dropdown outside" id="bomenu" style="position: absolute; top:5vw; left: 0vw; padding-left: 0; visibility: hidden;" onmouseleave="closeMenu()" onclick="closeMenu()">
+        <div class="dropdown-content insidemenu">
+            <a style="cursor: default; color: palegreen; opacity: 1; border: 1px transparent solid; background: transparent;">ECOUTE BELLE-IDEE </a>
             <a href="careclubabi.html">Le CARECLUB à Belle-Idée </a>
             <a href="apropos.html">A propos du projet</a>
             <a href="contact.html">Contact</a>
             <a href="catalogue.html">Catalogue de sons</a>
             <a href="references.html">Références </a>
         </div>
-    </div>
-    <img class="sound on outside"  onclick="soundAction()">
-        <img class=" inside" id='back' src="https://feministcurricula.org/careclub/img/back.png" style="    padding: 2vh;
-    width: 50px; cursor: pointer;"  onclick='goOutside()'>
+        </div>
+        <div id="closebutton" onclick="reopen()" style="visibility: hidden; position: absolute; z-index:1500; padding: 2vh; width: 30px; right: 0;">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 32 40" style="enable-background:new 0 0 32 40;" xml:space="preserve">
+<path d="M23.9,21.2L18.7,16l5.2-5.2c0.6-0.6,0.6-1.6,0-2.2l-0.5-0.5c-0.3-0.3-0.7-0.5-1.1-0.5c0,0,0,0,0,0c-0.4,0-0.8,0.2-1.1,0.4
+    L16,13.3l-5.2-5.2c-0.6-0.6-1.6-0.6-2.2,0L8.1,8.6C7.8,8.9,7.7,9.3,7.7,9.7c0,0.4,0.2,0.8,0.4,1.1l5.2,5.2l-5.2,5.2
+    c-0.6,0.6-0.6,1.6,0,2.2l0.5,0.5c0.3,0.3,0.7,0.5,1.1,0.5c0.4,0,0.8-0.2,1.1-0.5l5.2-5.2l5.2,5.2c0.3,0.3,0.7,0.5,1.1,0.5
+    c0.4,0,0.8-0.1,1.1-0.4l0.5-0.5c0.3-0.3,0.5-0.7,0.5-1.1C24.3,21.9,24.2,21.5,23.9,21.2L23.9,21.2z"/>
+</svg>
 
-    <div class="restart round outside" onclick="reset()" style="color: black; font-size: 24px ;">
-          <img style="width: 60px" 
-     src="https://feministcurricula.org/careclub/img/restart.png">
+        </div>   
+
+    <div class="sound on outside"  onclick="soundAction()">
+        <div class="allume">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 100 125" style="enable-background:new 0 0 100 125;" xml:space="preserve">
+<polygon class="st0" points="1,33 1,68 17.7,68 43,87.4 43,67.5 43,32.5 43,12.5 17.7,33 "/>
+<path class="st0" d="M62.3,12.7c-1.3,0-2.6,0.1-3.8,0.2C77.2,14.8,91.9,30.7,91.9,50c0,19.3-14.7,35.2-33.4,37.1
+    c1.3,0.1,2.5,0.2,3.8,0.2c20.6,0,37.3-16.7,37.3-37.3C99.5,29.4,82.8,12.7,62.3,12.7z"/>
+<path class="st0" d="M84.2,50c0-14.6-11.9-26.5-26.5-26.5c-0.9,0-1.8,0-2.7,0.1C68.3,25,78.7,36.3,78.7,50c0,13.7-10.4,25-23.7,26.3
+    c0.9,0.1,1.8,0.1,2.7,0.1C72.3,76.4,84.2,64.6,84.2,50z"/>
+<path class="st0" d="M70.3,50c0-9.8-8-17.8-17.8-17.8c-0.6,0-1.2,0-1.8,0.1c9,0.9,15.9,8.5,15.9,17.7s-7,16.8-15.9,17.7
+    c0.6,0.1,1.2,0.1,1.8,0.1C62.4,67.7,70.3,59.8,70.3,50z"/>
+</svg></div>
+        <div class="eteint">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 100 125" style="enable-background:new 0 0 100 125;" xml:space="preserve">
+<polygon points="1,33 1,68 17.7,68 43,87.4 43,67.5 43,32.5 43,12.5 17.7,33 "/>
+<polygon points="60.7,31.1 55,36.8 68.2,50 55,63.1 60.7,68.8 73.8,55.7 87,68.8 92.7,63.1 79.5,50 92.7,36.8 87,31.1 73.8,44.3 "/>
+</svg>
+</div>
+
+    </div>
+        <div class=" inside" id='back' style="    padding: 2vh;
+    width: 50px; cursor: pointer;"  onclick='goOutside()'>
+     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 45 45" style="enable-background:new 0 0 45 45;" xml:space="preserve">
+    <path class="st0" d="M17.8,7.3L2.6,22.5l15.3,15.2h20.3L22.9,22.5L38.1,7.3C38.1,7.3,17.8,7.3,17.8,7.3z"/>
+</svg>
+    </div>
+
+    <div class="restart outside" onclick="reset()" style="color: black; font-size: 24px ;">
+ <svg style='width: 65px;' version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 32 40" style="enable-background:new 0 0 32 40;" xml:space="preserve">
+<path class="st0" d="M11,20.5l2.4-2.4L2.9,16.8l1.2,10.5l2.4-2.4C8.9,27.4,12.3,29,16,29c5.9,0,10.9-4,12.5-9.4
+    c-2.4,2.4-5.6,3.8-9.2,3.8C16.1,23.4,13.2,22.3,11,20.5z"/>
+<path class="st0" d="M21,11.5L18.6,14l10.5,1.2L27.9,4.7l-2.4,2.4C23.1,4.6,19.7,3,16,3C10.1,3,5.1,7,3.5,12.4
+    c2.4-2.4,5.6-3.8,9.2-3.8C15.9,8.6,18.8,9.7,21,11.5z"/>
+</svg>
+
     </div>
 
   
@@ -60,24 +112,26 @@
         <div id="myModal" class="modal">
 
   <!-- Modal content -->
-  <div class="modal-content">Attention !<br><br>
-    <div>Vous vous apprêtez à vivre une expérience sonore qui traite de soin et de santé mentale.
+  <div class="modal-content"><div>Attention !</div><br><br>
+    <div style="margin-top: unset;">Vous vous apprêtez à vivre une expérience sonore qui traite de soin et de santé mentale.
 Ainsi, certaines paroles sont susceptibles d’éveiller des souvenirs ou des expériences traumatisantes.
 <br><br>
-Pour plus de confort nous vous conseillons d'utiliser des écouteurs et de passer en mode plein écran, ainsi que d’activer le son de votre appareil.<br><br><button class="enterWeb">Continuer</button>
+Pour plus de confort nous vous conseillons d'utiliser des écouteurs et de passer en mode plein écran, ainsi que d’activer le son de votre appareil.<br><br><button class="enterWeb" id="goOon" style="display: none;">Continuer</button>
+<button class="enterWeb" style="width: 320px; height:43px; padding: 0; border-color: white; border-radius: 50px; ">  <div id="myBar" style="height: 100%; margin:0; border-radius: 50px;background: white; width: 10%; transition: width 1s ease;
+"></div></button>
 </div>
 
   </div>
 </div>
-  <div id='imgcontainer'></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <div id='imgcontainer' class="imgcontain"></div>
 
    <script type="module">
-        import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
+  import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
 
 
       import { TrackballControls } from 'https://bisiyo.github.io/belleidee/jsm/TrackballControls.js';
       import { PCDLoader } from 'https://bisiyo.github.io/belleidee/jsm/PCDLoader.js';
+
 
         
       let container;
@@ -87,6 +141,7 @@ let listennX = false;
 let listennY = false;
 let listennZ = false;
 let sens;
+let okay = true;
 
 let loadIndexObj = 0;
 let listObjects = ['abribus','air','appeleur','banc','barrage','guide','guideB','moto','oeuvre', 'bac'];
@@ -176,11 +231,14 @@ points.material.size = 0.1;
                       loadIndexObj++;
                       if (loadIndexObj < listObjects.length) {
 loadNewObject();
+document.getElementById('myBar').style.width = loadIndexObj * 100/listObjects.length + '%'
                       } else {
 let op = document.getElementsByClassName('open');
 for (var i = 0; i < op.length; i++) {
     op[i].addEventListener("click", function(){objOpen(this.getAttribute('objet'), this.getAttribute('number'))});
-}
+document.getElementById('myBar').parentNode.style.display = 'none';
+}document.getElementsByClassName('enterWeb')[0].style.display = 'unset';
+
 
                       }
 
@@ -216,16 +274,51 @@ for (var i = 0; i < op.length; i++) {
 
 
 
-
+if (okay) {
         if (listennY) Objpoints.rotation.y += 0.001*sens;
         if (listennX) Objpoints.rotation.x += 0.001*sens;
         if (listennZ) Objpoints.rotation.z += 0.001*sens;
-
+}
       }
 
 
 
       $( document ).ready(function() {
+
+        const player = new Plyr('#bigAudio');
+        player.on('play', event => {
+    okay = true;
+
+});
+
+                player.on('pause', event => {
+    okay = false;
+
+});
+
+
+                player.on('volumechange', event => {
+                                                let allaudio = document.getElementsByClassName('audi');
+
+                    if (player.muted) {
+
+                                                for (var i = 0; i < allaudio.length; i++) {
+                    allaudio[i].muted = true;
+                                                }
+
+                                                if (document.getElementsByClassName('sound')[0].classList.contains('on')) document.getElementsByClassName('sound')[0].classList.remove('on')
+
+                    } else {
+for (var i = 0; i < allaudio.length; i++) {
+                    if (i != 5) allaudio[i].muted = false;
+                                                }
+                        if (!document.getElementsByClassName('sound')[0].classList.contains('on')) document.getElementsByClassName('sound')[0].classList.add('on')
+
+                    }
+
+});
+
+
 
    document.getElementById('back').addEventListener("click", function(){
 Objpoints.visible = false;
@@ -242,10 +335,21 @@ for (var i = 0; i < op.length; i++) {
     op[i].addEventListener("click", function(){objOpen(this.getAttribute('objet'), this.getAttribute('number'))});
 }});
 
+document.getElementById('bigAudio').addEventListener("click", function(){
+if (document.getElementById('bigAudio').paused) {
+    okay = false;
+} else {
+    okay = true;
+}
 
 });
+
+});
+
+
       function objOpen(blo, bla) {
 
+okay = true;
         insideobj = true;
        if (scene.getObjectByName(blo)) { scene.getObjectByName(blo).visible = true;
        Objpoints = scene.getObjectByName(blo);
@@ -292,7 +396,7 @@ for (var i = 0; i < op.length; i++) {
   $('.radial-gradient').css('background', 'radial-gradient(at ' + mouseXpercentage + '% ' + mouseYpercentage + '%, #bc2e41, #2c4e90)');
 
 });
-  $('.enterWeb').click(function(event) {
+  $('#goOon').click(function(event) {
   document.getElementById("myModal").style.display = "none";
 });
 
@@ -317,6 +421,7 @@ for (var i = 0; i < slides.length; i++) {
 }
 
 
+
 var ins = document.getElementsByClassName("inside");
 for (var i = 0; i < ins.length; i++) {
     document.getElementsByClassName("inside")[i].style.display = "block";
@@ -324,12 +429,11 @@ for (var i = 0; i < ins.length; i++) {
 
     document.getElementsByClassName("hours")[0].style.display = "block";
 
-
   }
 
     function goOutside(){
+        okay = false;
                    let allaudio = document.getElementsByClassName('audi');
-
                for (var i = 0; i < allaudio.length; i++) {
                     allaudio[i].pause();
                     disableControls(allaudio[i]);
@@ -356,14 +460,37 @@ for (var i = 0; i < ins.length; i++) {
 }
 
 function disableControls(x) { 
-    x.controls = false;
     x.load();
 } 
 
+function openMenu() { 
+    document.getElementById('bomenu').style.visibility = 'visible';
+} 
 
+function closeMenu() { 
+
+    if (window.innerWidth > 980)  {
+        document.getElementById('bomenu').style.visibility = 'hidden';
+    } else {
+        document.getElementsByClassName('sound')[0].style.visibility = 'hidden';
+                document.getElementsByClassName('dropbtn')[0].style.visibility = 'hidden';
+                document.getElementById('closebutton').style.visibility = 'visible';
+
+    }
+
+}
+
+function reopen() {
+ document.getElementsByClassName('sound')[0].style.visibility = 'visible';
+                document.getElementsByClassName('dropbtn')[0].style.visibility = 'visible';
+                document.getElementById('closebutton').style.visibility = 'hidden';
+                        document.getElementById('bomenu').style.visibility = 'hidden';
+
+}
 
 
 
 </script>
+
 
 </html>
